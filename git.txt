@@ -196,7 +196,8 @@ git push -u origin branch_name(i.e. main)
 
 Push is used to push a branch to a remote repository.
 
-push an existing repository from the command line
+*push an existing repository from the command line
+
 git remote add origin https://github.com/ChanchalKhatri/temp.git
 git branch -M branch_name(i.e. main)
 git push -u origin branch_name(i.e. main)
