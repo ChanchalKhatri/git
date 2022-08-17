@@ -1,0 +1,220 @@
+Git:
+git is a version control system
+git,SVN,CVS Bazar
+
+Version control benefit
+1.Easily recover file from past version.
+2.Roll back to previously state.
+
+git installation   mot completed
+download and install git by website git-smc
+just do next next and change as visual studio as git default then next next ony tic last options 
+
+install
+next
+next
+last two option tic
+nextnext
+vs code as defauld editor editornext
+next
+last optionsnext
+next
+next
+next
+last two where we have to tic at that time tic all option 
+rm -rf * to delete all files in folder
+
+To delete .git folder
+rm -rf .git/ to delete .git folder
+
+U:- Untracked file // not perfect(Unmerged file) : shown by ??
+M:- Modified
+A:- Addition of file in repository/staging area.
+Staging area:- area where we are adding our file in the repository.
+
+How to check git version
+>git --version 
+
+How to check user info
+>git config --list  //here it will show more details
+>git config --global --list  //here you will get only address, user name and user email.
+
+How to setup user name and email id
+>git config --global user.name "user_name/your_name"
+>git config --global user.email "user.email/your.email"
+
+How to edit in .gitconfig file
+git config --global --edit  // This is hidden file and we cannot come out from terminal so we have to close file from upside.
+
+How to initialize a folder as git repository
+git init  //(Here we initialized our folder as git repository i.e. this folder will have backup and is set ) not correct// to ready it for working to build repository
+
+How to check status
+git status
+git status -s  //-s short status
+
+How to add or for tracking or to add file in staging area
+git add <file_name>
+Example git add index.html
+
+How to add all file and folder in staging area
+git add .
+git add -A
+
+How to commit changes
+Here it build repository by staging to commit we have to stag file means add file
+git commit -m "message" // here we write message in "double quote"
+git commit -m "initial commit"  //for staging
+
+How to commit files and folder together and giving message
+> git commit -a //here we will add message in files
+> git commit -am "message" // here we will am means add and message at a time // usedd final
+
+How to check all commit changes
+> git log
+> git log --oneline
+
+for example:
+commit 41973484fd51e211f9efcf8e818fa414a8fc4c58 (HEAD -> main)
+Author: Chanchal Satyanarayan Khatri <khatrichanchal1910@gmail.com>
+Date:   Fri Aug 5 10:32:56 2022 +0530
+
+    message
+
+commit bc5fbb01f1c8b2b08ab320505c70675d6c5ec5e8 //this is secure and 
+Author: Chanchal Satyanarayan Khatri <khatrichanchal1910@gmail.com>
+Date:   Thu Aug 4 22:46:34 2022 +0530
+
+     initial commit
+
+    commit related information
+
+>git log -p -<no_of_commit>
+> git log -p -2 //Here it shows last two commit and also shows what we did in that file i.e. shows changes of the file we did
+    > - and in red color which we removed in file
+    > + we added in file
+
+* Difference in files
+    after commit we can't see difference of both working directory as well as staging / tracked directory
+Shows difference i.e. done changes in file => difference in working directory
+>  Here it will show what you have changed until you have not tracked or added to staging area or commited.
+> `git diff` 
+> `git diff  <file_name>` 
+
+Shows Difference staging area
+> `git diff --staged`
+> `git diff --staged <file_name>` 
+    Here it will show difference done in staging area.
+        a - working area 
+        b - staging area
+
+*How to restore the file changes from working directory
+> `git restore <file_name>`
+
+*How to restore the file changes from staging area
+> `git restore --staged <file_name>`
+
+How to checkout a specific commit / visit a specific commit.
+>git checkout <commit_id>
+
+Here it will show changes in our that file using its id 
+>git checkout <master/main i.e. our previous branch>
+
+How to see specific commit information
+>git show <commit_id> 
+> Shows changes what we have changed in file using commit
+
+To check branch
+>git branch
+
+How to change branch
+git checkout <branch_name>
+
+To create Branch
+>git branch <branch_name>
+
+using id 
+then you will get this:
+    * (HEAD detached at bfd63f8)
+  main
+
+How to do changes in commited text
+> git commit --amend
+> git commit --amend -m "message"
+
+How to delete branch
+>git branch -d <branch_name>
+
+How to delete file from repository
+>git rm <file_name>
+
+How to delete file from staging area i.e it remove file from staging area and become untracked file.
+>git rm --cached <file_name>
+
+How to go back to previous commit
+>git reset <commit_id>
+
+Reverting to a specific commit based on commit id with Git
+>git revert <commit_id>
+
+remove file from repository
+>git rm --cached <file_name>
+>git  
+
+>git rm -r <folder_name>
+
+.gitignore is used to ignore files in repository
+in this file we can ignore files which we don't want to commit
+We have to create this file in our repository folder untracked file will be ignored
+We have to write file name in this file 
+>.gitignore
+
+# is used to comment line
+
+Files included in .gitignore
+.gitignore
+.DS_Store
+.git
+.gitattributes
+.gitmodules
+
+to merge a branch to another branch.
+>git merge branch_name
+
+
+github 
+github is a version control 
+
+create a remote/online new repository on the command line
+echo "# temp" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M branch_name(i.e. main)
+git remote add origin https://github.com/ChanchalKhatri/temp.git
+git push -u origin branch_name(i.e. main)
+
+Push is used to push a branch to a remote repository.
+
+push an existing repository from the command line
+git remote add origin https://github.com/ChanchalKhatri/temp.git
+git branch -M branch_name(i.e. main)
+git push -u origin branch_name(i.e. main)
+
+>git remote add origin https://github.com/ChanchalKhatri/temp.git //this is remote repository
+
+>git remote set-url origin https://github.com/ChanchalKhatri/temp.git //to set new push behavior
+
+How to check remote origin
+>git remote -v
+
+To push directly from offline to online 
+you have to create same branch on github and on offline 
+git Push origin branch_name
+
+To check remote repository url
+git config --get remote.origin.url
+
+git remote set url origin https://github.com/ChanchalKhatri/temp.git
+
+forks means to build copy 
